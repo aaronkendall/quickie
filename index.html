@@ -5,12 +5,51 @@
   <script src="js/app.js"></script>
   <script src="js/controllers/MainCtrl.js"></script>
 
-  <link rel="stylesheet" src="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
 </head>
 
 <body ng-controller="MainCtrl as main">
+  <div class="container-fluid">
 
+    <div class="col-md-4" ng-show="sidebarToggle">
+      <div class="row">
+        <h3>Gender</h3>
+        <div class="row">
+          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="gender" ng-value="male">Male</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="gender" ng-value="female">Female</button>
+        </div>
+      </div>
+      <div class="row">
+        <h3>Orientation</h3>
+        <div class="row">
+          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="orientation" ng-value="straight">Straight</button>
+        </div>
+        <div class="row">
+          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="orientation" ng-value="gay">Gay</button>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-" ng-click="updateUserSettings(gender, orientation)">Save Settings</button>
+      </div>
+    </div>
+
+    <div class="col-md-4" ng-hide="sidebarToggle">
+    </div>
+
+    <div class="col-md-4" id="vertical-center">
+      <div class="row">
+        <img src="img/logo.png">
+      </div>
+
+      <div class="row">
+        <button class="btn btn-" onclick="toggleSidebar()">Edit Settings</button>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>
