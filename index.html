@@ -11,44 +11,44 @@
 
 <body ng-controller="MainCtrl as main">
   <div class="container-fluid">
-
-    <div class="col-md-4" ng-show="sidebarToggle">
+    <div class="col-md-4" ng-show="main.sidebarToggle" id="sidebar">
       <div class="row">
         <h3>Gender</h3>
         <div class="row">
-          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="gender" ng-value="male">Male</button>
+          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="gender" ng-value="male">Male</button>
         </div>
         <div class="row">
-          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="gender" ng-value="female">Female</button>
+          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="gender" ng-value="female">Female</button>
         </div>
       </div>
       <div class="row">
         <h3>Orientation</h3>
         <div class="row">
-          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="orientation" ng-value="straight">Straight</button>
+          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="orientation" ng-value="straight">Straight</button>
         </div>
         <div class="row">
-          <button class="btn btn-" ng-click="toggleSidebar()" ng-model="orientation" ng-value="gay">Gay</button>
+          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="orientation" ng-value="gay">Gay</button>
         </div>
       </div>
       <div class="row">
-        <button class="btn btn-" ng-click="updateUserSettings(gender, orientation)">Save Settings</button>
+        <button class="btn btn-warning" ng-click="main.updateUserSettings(gender, orientation)">Save Settings</button>
       </div>
     </div>
 
-    <div class="col-md-4" ng-hide="sidebarToggle">
+    <div class="col-md-4" ng-hide="main.sidebarToggle">
     </div>
 
-    <div class="col-md-4" id="vertical-center">
-      <div class="row">
-        <img src="img/logo.png">
+    <div class="col-md-4" id="main-content">
+      <div class="row text-center">
+        <img src="img/logo.png" id="full-width">
       </div>
-
-      <div class="row">
-        <button class="btn btn-" onclick="toggleSidebar()">Edit Settings</button>
+      <div class="row text-center">
+        <button class="btn btn-default" id="full-width" ng-click="">Have a quickie!</button>
+      </div>
+      <div class="row text-center">
+        <button class="btn btn-link" ng-click="main.toggleSidebar()">Edit Settings</button>
       </div>
     </div>
-
   </div>
 </body>
 
