@@ -10,6 +10,7 @@ quickie.controller('MainCtrl', ['$http', function($http) {
 
   self.updateUserSettings = function(gender, orientation) {
     self.userSettings = { "gender": gender, "orientation": orientation };
+    self.toggleSidebar();
   };
 
   self.toggleSidebar = function() {

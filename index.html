@@ -4,50 +4,51 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers/MainCtrl.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 </head>
 
 <body ng-controller="MainCtrl as main">
   <div class="container-fluid">
     <div class="col-md-4" ng-show="main.sidebarToggle" id="sidebar">
-      <div class="row">
+      <div class="full-sidebar text-center">
         <h3>Gender</h3>
-        <div class="row">
-          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="gender" ng-value="male">Male</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="gender" ng-value="female">Female</button>
-        </div>
-      </div>
-      <div class="row">
+          <div class="clearfix"></div>
+          <button type="button" class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="male"><i class="fa fa-mars" id="fa-margin"></i>Male</button>
+          <div class="clearfix"></div>
+
+          <button class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="female"><i class="fa fa-venus" id="fa-margin"></i>Female</button>
+          <div class="clearfix"></div>
+          <button class="btn btn-angle" id="angle-float-right" ng-click="main.toggleSidebar()"><i class="fa fa-4x fa-angle-left"></i></button>
+          <div class="clearfix"></div>
         <h3>Orientation</h3>
-        <div class="row">
-          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="orientation" ng-value="straight">Straight</button>
-        </div>
-        <div class="row">
-          <button class="btn btn-success" ng-click="main.toggleSidebar()" ng-model="orientation" ng-value="gay">Gay</button>
+          <div class="clearfix"></div>
+          <button class="btn btn-success" data-toggle="button" ng-model="orientation" ng-value="straight"><i class="fa fa-male"></i><i class="fa fa-female" id="fa-margin"></i>Straight</button>
+
+          <div class="clearfix"></div>
+          <button class="btn btn-success" data-toggle="button" ng-model="orientation" ng-value="gay"><i class="fa fa-male"></i><i class="fa fa-male" id="fa-margin"></i>Gay</button>
+
+          <div class="clearfix"></div>
+          <button class="btn btn-warning" ng-click="main.updateUserSettings(gender, orientation)">Save Settings</button>
         </div>
       </div>
-      <div class="row">
-        <button class="btn btn-warning" ng-click="main.updateUserSettings(gender, orientation)">Save Settings</button>
-      </div>
-    </div>
 
     <div class="col-md-4" ng-hide="main.sidebarToggle">
+      <div id="sidebar" class="col-md-3">
+        <button class="btn btn-angle" id="vertical-center" ng-click="main.toggleSidebar()"><i class="fa fa-4x fa-angle-right"></i></button>
+      </div>
     </div>
 
-    <div class="col-md-4" id="main-content">
-      <div class="row text-center">
-        <img src="img/logo.png" id="central-item">
-      </div>
-      <div class="row text-center">
-        <button class="btn btn-default" id="central-item" ng-click="">Have a quickie!</button>
-      </div>
-      <div class="row text-center">
-        <button class="btn btn-link" ng-click="main.toggleSidebar()">Edit Settings</button>
-      </div>
+    <div class="col-md-4 text-center" id="main-content">
+      <img src="img/logo.png" id="central-item">
+      <div class="clearfix"></div>
+      <button class="btn btn-default" id="central-item" ng-click="">Have a quickie!</button>
+      <div class="clearfix"></div>
+      <button class="btn btn-link" ng-click="main.toggleSidebar()"><i class="fa fa-cog" id="fa-margin"></i>Edit Settings</button>
     </div>
   </div>
 </body>
