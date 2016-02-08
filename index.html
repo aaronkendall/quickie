@@ -17,15 +17,15 @@
     <div class="col-md-4" ng-show="main.sidebarToggle" id="sidebar">
       <div class="full-sidebar text-center">
         <h3>Gender</h3>
-          <div class="clearfix"></div>
-          <button type="button" class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="male"><i class="fa fa-mars" id="fa-margin"></i>Male</button>
-          <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <button type="button" class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="male"><i class="fa fa-mars" id="fa-margin"></i>Male</button>
+        <div class="clearfix"></div>
 
-          <button class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="female"><i class="fa fa-venus" id="fa-margin"></i>Female</button>
-          <div class="clearfix"></div>
-          <button class="btn btn-angle" id="angle-float-right" ng-click="main.toggleSidebar()"><i class="fa fa-4x fa-angle-left"></i></button>
-          <div class="clearfix"></div>
-        <h3>Orientation</h3>
+        <button class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="female"><i class="fa fa-venus" id="fa-margin"></i>Female</button>
+        <div class="clearfix"></div>
+
+        <div class="sidebar-bottom">
+          <h3>Orientation</h3>
           <div class="clearfix"></div>
           <button class="btn btn-success" data-toggle="button" ng-model="orientation" ng-value="straight"><i class="fa fa-male"></i><i class="fa fa-female" id="fa-margin"></i>Straight</button>
 
@@ -36,6 +36,7 @@
           <button class="btn btn-warning" ng-click="main.updateUserSettings(gender, orientation)">Save Settings</button>
         </div>
       </div>
+    </div>
 
     <div class="col-md-4" ng-hide="main.sidebarToggle">
       <div id="sidebar" class="col-md-3">
@@ -43,7 +44,7 @@
       </div>
     </div>
 
-    <div class="col-md-4 text-center" id="main-content">
+    <div class="col-md-4 text-center main-content">
       <img src="img/logo.png" id="central-item">
       <div class="clearfix"></div>
       <button class="btn btn-default" id="central-item" ng-click="">Have a quickie!</button>
