@@ -18,22 +18,22 @@
       <div class="full-sidebar text-center">
         <h3>Gender</h3>
         <div class="clearfix"></div>
-        <button type="button" class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="male"><i class="fa fa-mars" id="fa-margin"></i>Male</button>
+        <button class="btn btn-success" ng-class="{'active': main.userSettings.gender == 'male'}" ng-click="main.userSettings.gender = 'male'"><i class="fa fa-mars" id="fa-margin"></i>Male</button>
         <div class="clearfix"></div>
 
-        <button class="btn btn-success" data-toggle="button" ng-model="gender" ng-value="female"><i class="fa fa-venus" id="fa-margin"></i>Female</button>
+        <button class="btn btn-success" ng-class="{'active': main.userSettings.gender == 'female'}" ng-click="main.userSettings.gender = 'female'"><i class="fa fa-venus" id="fa-margin"></i>Female</button>
         <div class="clearfix"></div>
 
         <div class="sidebar-bottom">
           <h3>Orientation</h3>
           <div class="clearfix"></div>
-          <button class="btn btn-success" data-toggle="button" ng-model="orientation" ng-value="straight"><i class="fa fa-male"></i><i class="fa fa-female" id="fa-margin"></i>Straight</button>
+          <button class="btn btn-success" ng-class="{'active': main.userSettings.orientation == 'straight'}" ng-click="main.userSettings.orientation = 'straight'"><i class="fa fa-male"></i><i class="fa fa-female" id="fa-margin"></i>Straight</button>
 
           <div class="clearfix"></div>
-          <button class="btn btn-success" data-toggle="button" ng-model="orientation" ng-value="gay"><i class="fa fa-male"></i><i class="fa fa-male" id="fa-margin"></i>Gay</button>
+          <button class="btn btn-success" ng-class="{'active': main.userSettings.orientation == 'gay'}" ng-click="main.userSettings.orientation = 'gay'"><i class="fa fa-male"></i><i class="fa fa-male" id="fa-margin"></i>Gay</button>
 
           <div class="clearfix"></div>
-          <button class="btn btn-warning" ng-click="main.updateUserSettings(gender, orientation)">Save Settings</button>
+          <button class="btn btn-warning" ng-click="main.updateUserSettings()">Save Settings</button>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="col-md-4 text-center main-content">
       <img src="img/logo.png" id="central-item">
       <div class="clearfix"></div>
-      <button class="btn btn-default" id="central-item" ng-click="">Have a quickie!</button>
+      <button class="btn btn-default" id="central-item" ng-click="main.requestVideo()">Have a quickie!</button>
       <div class="clearfix"></div>
       <button class="btn btn-link" ng-click="main.toggleSidebar()"><i class="fa fa-cog" id="fa-margin"></i>Edit Settings</button>
     </div>
