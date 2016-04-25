@@ -49,11 +49,11 @@
       <iframe id="central-item" ng-src="{{main.currentVideo}}" frameborder="0" width="800px" height="500px" scrolling="no"></iframe>
       <div class="row">
         <div class="col-md-6">
-          <button class="btn btn-default" id="central-item" ng-click="main.requestVideo(men)">
+          <button class="btn btn-default" id="central-item" ng-click="main.requestNewVideo('like')">
             <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
         </div>
         <div class="col-md-6">
-          <button class="btn btn-default" id="central-item" ng-click="main.requestVideo(men)">
+          <button class="btn btn-default" id="central-item" ng-click="main.requestNewVideo('dislike')">
             <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</button>
         </div>
       </div>
