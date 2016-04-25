@@ -9,6 +9,18 @@
 
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="img/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
 
   <title>Quickie | The porn site that learns what you like</title>
 
@@ -16,42 +28,35 @@
 
 <body ng-controller="MainCtrl as main">
   <div class="container-fluid">
-    <div class="col-md-4" ng-show="main.sidebarToggle" id="sidebar">
-      <div class="full-sidebar text-center">
-        <h3>Gender</h3>
-        <div class="clearfix"></div>
-        <button class="btn btn-success" ng-class="{'active': main.userSettings.gender == 'male'}" ng-click="main.userSettings.gender = 'male'"><i class="fa fa-mars" id="fa-margin"></i>Male</button>
-        <div class="clearfix"></div>
-
-        <button class="btn btn-success" ng-class="{'active': main.userSettings.gender == 'female'}" ng-click="main.userSettings.gender = 'female'"><i class="fa fa-venus" id="fa-margin"></i>Female</button>
-        <div class="clearfix"></div>
-
-        <div class="sidebar-bottom">
-          <h3>Orientation</h3>
-          <div class="clearfix"></div>
-          <button class="btn btn-success" ng-class="{'active': main.userSettings.orientation == 'straight'}" ng-click="main.userSettings.orientation = 'straight'"><i class="fa fa-male"></i><i class="fa fa-female" id="fa-margin"></i>Straight</button>
-
-          <div class="clearfix"></div>
-          <button class="btn btn-success" ng-class="{'active': main.userSettings.orientation == 'gay'}" ng-click="main.userSettings.orientation = 'gay'"><i class="fa fa-male"></i><i class="fa fa-male" id="fa-margin"></i>Gay</button>
-
-          <div class="clearfix"></div>
-          <button class="btn btn-warning" ng-click="main.updateUserSettings()">Save Settings</button>
+    <div class="col-md-offset-4 col-md-4 text-center main-content" ng-hide="main.currentVideo">
+      <img src="img/logo.png" id="central-item">
+      <h1>Consume porno quicker than ever before!</h1>
+      <br>
+      <h2>I'm interested in...</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-default" id="central-item" ng-click="main.requestVideo('men')">
+            <i class="fa fa-male" aria-hidden="true"></i> Men</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-default" id="central-item" ng-click="main.requestVideo('women')">
+            <i class="fa fa-female" aria-hidden="true"></i> Women</button>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4" ng-hide="main.sidebarToggle">
-      <div id="sidebar" class="col-md-3">
-        <button class="btn btn-angle" id="vertical-center" ng-click="main.toggleSidebar()"><i class="fa fa-4x fa-angle-right"></i></button>
+    <div class="col-md-offset-3 col-md-6 text-center video-content" ng-show="main.currentVideo">
+      <iframe id="central-item" ng-src="{{main.currentVideo}}" frameborder="0" width="800px" height="500px" scrolling="no"></iframe>
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-default" id="central-item" ng-click="main.requestVideo(men)">
+            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-default" id="central-item" ng-click="main.requestVideo(men)">
+            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</button>
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-4 text-center main-content">
-      <img src="img/logo.png" id="central-item">
-      <div class="clearfix"></div>
-      <button class="btn btn-default" id="central-item" ng-click="main.requestVideo()">Have a quickie!</button>
-      <div class="clearfix"></div>
-      <button class="btn btn-link" ng-click="main.toggleSidebar()"><i class="fa fa-cog" id="fa-margin"></i>Edit Settings</button>
     </div>
   </div>
 </body>

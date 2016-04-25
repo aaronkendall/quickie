@@ -22,6 +22,10 @@
   margin-top: 15%;
 }
 
+.video-content {
+	margin-top: 5%;
+}
+
 #fa-margin {
   margin-right: 5px;
 }
@@ -1265,7 +1269,7 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 10px;
 }
 h1 small,
@@ -1307,11 +1311,13 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 30px;
+	font-weight: lighter;
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 26px;
+	font-weight: lighter;
 }
 h3,
 .h3 {

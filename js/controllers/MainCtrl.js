@@ -1,29 +1,23 @@
-quickie.controller('MainCtrl', ['$http', function($http) {
+quickie.controller('MainCtrl', ['$http', '$sce', function($http, $sce) {
 
   var self = this;
 
-  self.currentVideo = [];
+  self.currentVideo = "";
 
-  self.sidebarToggle = false;
-
-  self.userSettings = { gender: "male", orientation: "straight"}
-
-  self.updateUserSettings = function() {
-    self.toggleSidebar();
-  };
-
-  self.toggleSidebar = function() {
-    self.sidebarToggle = !self.sidebarToggle;
-  };
-
-  self.requestVideo = function() {
+  self.requestVideo = function(gender, rating) {
+    const params = '?rating=' + rating;
     $http({
       method: 'GET',
-      url: 'http://backendapi.com',
-      params: self.userSettings
-    }).then(function successCallback(response) {
-      self.currentVideo = response.data.url;
-    })
-  }
+      url: 'http://localhost:3000/' + gender + params,
+    }).then(function(response) {
+      let videoEmbedCode = "http://www.pornhub.com/embed/" + response.data.video_id;
+      self.trustVideo(videoEmbedCode);
+    });
+
+  };
+
+  self.trustVideo = function(videoUrl) {
+    self.currentVideo = $sce.trustAsResourceUrl(videoUrl);
+  };
 
 }]);
