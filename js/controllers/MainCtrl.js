@@ -12,7 +12,7 @@ quickie.controller('MainCtrl', ['$http', '$sce', function($http, $sce) {
       method: 'GET',
       url: 'https://glacial-escarpment-64380.herokuapp.com/' + gender,
     }).then(function(response) {
-      let videoEmbedCode = 'http://www.pornhub.com/embed/' + response.data.video_id;
+      let videoEmbedCode = 'https://www.pornhub.com/embed/' + response.data.video_id;
       self.currentVideoId = response.data.video_id;
       self.trustVideo(videoEmbedCode);
     });
@@ -26,7 +26,7 @@ quickie.controller('MainCtrl', ['$http', '$sce', function($http, $sce) {
       method: 'GET',
       url: 'https://glacial-escarpment-64380.herokuapp.com/' + self.preference + params + videoParams,
     }).then(function(response) {
-      let videoEmbedCode = "http://www.pornhub.com/embed/" + response.data.video_id;
+      let videoEmbedCode = "https://www.pornhub.com/embed/" + response.data.video_id;
       self.currentVideoId = response.data.video_id;
       self.trustVideo(videoEmbedCode);
     });
