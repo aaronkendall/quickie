@@ -22,8 +22,8 @@
   margin-top: 15%;
 }
 
-.video-content {
-	margin-top: 5%;
+#rating-buttons {
+	margin-left: 15px;
 }
 
 #fa-margin {
@@ -36,13 +36,6 @@
 
   display: flex;
   float: right;
-}
-
-#sidebar {
-  background-color: #ec403e;
-  box-shadow: 5px 0px 5px #000;
-  min-height: 100vh;
-  margin-right: 15px;
 }
 
 #central-item {

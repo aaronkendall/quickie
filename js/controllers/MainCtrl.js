@@ -5,6 +5,8 @@ quickie.controller('MainCtrl', ['$http', '$sce', function($http, $sce) {
   self.preference = '';
   self.currentVideoId = '';
   self.currentVideo = '';
+  self.iframeHeight = window.innerHeight;
+  self.iframeWidth = window.innerWidth;
 
   self.requestVideo = function(gender) {
     self.preference = gender;

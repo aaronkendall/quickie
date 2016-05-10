@@ -43,9 +43,9 @@
       </div>
     </div>
 
-    <div class="col-md-offset-3 col-md-6 text-center video-content" ng-show="main.currentVideo">
-      <iframe id="central-item" ng-src="{{main.currentVideo}}" frameborder="0" width="800px" height="500px" scrolling="no"></iframe>
-      <div class="row">
+    <div class="col-md-12 text-center" ng-show="main.currentVideo">
+      <iframe ng-src="{{main.currentVideo}}" frameborder="0" width="{{main.iframeWidth + 'px'}}" height="{{main.iframeHeight + 'px'}}" scrolling="no"></iframe>
+      <div id="rating-buttons" class="row">
         <div class="col-md-6">
           <button class="btn btn-default" id="central-item" ng-click="main.requestNewVideo('like')">
             <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
